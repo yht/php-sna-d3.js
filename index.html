@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SNA</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        iframe {
+            border: none;
+        }
+        #form-frame {
+            width: 20%;
+            height: 95%;
+        }
+        #graph-frame {
+            width: 75%;
+            height: 95%;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="form-frame" src="input.html"></iframe>
+    <iframe id="graph-frame" src="d3/"></iframe>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            if (event.data === 'reload') {
+                // Reload the graph iframe
+                document.getElementById('graph-frame').contentWindow.location.reload();
+            }
+        });
+    </script>
+</body>
+</html>
